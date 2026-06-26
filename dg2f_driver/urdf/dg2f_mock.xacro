@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot name="dg2f" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find dg2f_description)/urdf/dg2f.urdf" />
+
+    <link name="base_link" />
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="l_base"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <ros2_control name="dg2f_mock" type="system">
+        <hardware>
+            <plugin>mock_components/GenericSystem</plugin>
+            <param name="mock_sensor_commands">false</param>
+            <param name="position_state_following_offset">0.0</param>
+        </hardware>
+
+        <joint name="j_1_1">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="j_1_2">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="j_1_3">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="j_2_1">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="j_2_2">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+        <joint name="j_2_3">
+            <command_interface name="position" />
+            <state_interface name="position"><param name="initial_value">0.0</param></state_interface>
+            <state_interface name="velocity" />
+        </joint>
+    </ros2_control>
+</robot>

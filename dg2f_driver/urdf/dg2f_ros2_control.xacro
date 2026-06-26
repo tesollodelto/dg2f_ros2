@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<robot name="dg2f" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- Default argument values -->
+    <xacro:arg name="delto_ip" default="169.254.186.72" />
+    <xacro:arg name="delto_port" default="502" />
+    <xacro:arg name="fingertip_sensor" default="false" />
+    <xacro:arg name="io" default="false" />
+
+    <xacro:include filename="$(find dg2f_description)/urdf/dg2f.urdf"/>
+
+    <link name="base_link" />
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="l_base"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <ros2_control name="dg2f_driver" type="system">
+        <hardware>
+            <plugin>delto_hardware/SystemInterface</plugin>
+            <param name="delto_ip">$(arg delto_ip)</param>
+            <param name="delto_port">$(arg delto_port)</param>
+            <param name="delto_model">12034</param> <!-- 0x2F02 (DG-2F-M) -->
+            <param name="fingertip_sensor">$(arg fingertip_sensor)</param>
+            <param name="IO">$(arg io)</param>
+        </hardware>
+
+        <joint name="j_1_1">
+            <command_interface name="effort"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="j_1_2">
+            <command_interface name="effort"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="j_1_3">
+            <command_interface name="effort"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="j_2_1">
+            <command_interface name="effort"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="j_2_2">
+            <command_interface name="effort"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="j_2_3">
+            <command_interface name="effort"/>
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>
+        </joint>
+    </ros2_control>
+</robot>

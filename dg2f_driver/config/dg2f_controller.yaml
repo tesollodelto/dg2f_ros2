@@ -1,0 +1,82 @@
+/**/controller_manager:
+  ros__parameters:
+    update_rate: 100 # Joint state pub rate
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    dg2f_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+/**/dg2f_controller:
+  ros__parameters:
+    state_publish_rate: 500.0
+    action_monitor_rate: 500.0
+    allow_nonzero_velocity_at_trajectory_end: false
+    allow_partial_joints_goal: True
+    gains:
+      j_1_1:
+        p: 1.5
+        i: 0.0
+        d: 0.0
+        i_clamp_max: 0.0
+        i_clamp_min: 0.0
+        ff_velocity_scale: 0.0001
+      j_1_2:
+        p: 1.5
+        i: 0.0
+        d: 0.0
+        i_clamp_max: 0.0
+        i_clamp_min: 0.0
+        ff_velocity_scale: 0.0001
+      j_1_3:
+        p: 1.5
+        i: 0.0
+        d: 0.0
+        i_clamp_max: 0.0
+        i_clamp_min: 0.0
+        ff_velocity_scale: 0.0001
+      j_2_1:
+        p: 1.5
+        i: 0.0
+        d: 0.0
+        i_clamp_max: 0.0
+        i_clamp_min: 0.0
+        ff_velocity_scale: 0.0001
+      j_2_2:
+        p: 1.5
+        i: 0.0
+        d: 0.0
+        i_clamp_max: 0.0
+        i_clamp_min: 0.0
+        ff_velocity_scale: 0.0001
+      j_2_3:
+        p: 1.5
+        i: 0.0
+        d: 0.0
+        i_clamp_max: 0.0
+        i_clamp_min: 0.0
+        ff_velocity_scale: 0.0001
+    joints:
+      - j_1_1
+      - j_1_2
+      - j_1_3
+      - j_2_1
+      - j_2_2
+      - j_2_3
+    command_interfaces:
+      - effort
+    state_interfaces:
+      - position
+      - velocity
+
+/**/joint_state_broadcaster:
+  ros__parameters:
+    update_rate: 100
+    joints:
+      - j_1_1
+      - j_1_2
+      - j_1_3
+      - j_2_1
+      - j_2_2
+      - j_2_3
