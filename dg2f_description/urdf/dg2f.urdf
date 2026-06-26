@@ -10,7 +10,7 @@
       <geometry>
         <mesh filename="package://dg2f_description/meshes/dg2f/visual/l_base.dae" />
       </geometry>
-      <material>
+      <material name="dg2f_dark">
         <color rgba="0.03 0.03 0.03 1.0"/>
       </material>
     </visual>
@@ -31,7 +31,7 @@
       <geometry>
         <mesh filename="package://dg2f_description/meshes/dg2f/visual/l_1.dae" />
       </geometry>
-      <material>
+      <material name="dg2f_gray">
         <color rgba="0.07 0.07 0.07 1.0"/>
       </material>
     </visual>
@@ -58,7 +58,7 @@
       <geometry>
         <mesh filename="package://dg2f_description/meshes/dg2f/visual/l_2.dae" />
       </geometry>
-      <material>
+      <material name="dg2f_gray">
         <color rgba="0.07 0.07 0.07 1.0"/>
       </material>
     </visual>
@@ -85,7 +85,7 @@
       <geometry>
         <mesh filename="package://dg2f_description/meshes/dg2f/visual/l_3.dae" />
       </geometry>
-      <material>
+      <material name="dg2f_gray">
         <color rgba="0.07 0.07 0.07 1.0"/>
       </material>
     </visual>
@@ -112,7 +112,7 @@
       <geometry>
         <mesh filename="package://dg2f_description/meshes/dg2f/visual/l_tip.dae" />
       </geometry>
-      <material>
+      <material name="dg2f_gray">
         <color rgba="0.07 0.07 0.07 1.0"/>
       </material>
     </visual>
@@ -139,7 +139,7 @@
       <geometry>
         <mesh filename="package://dg2f_description/meshes/dg2f/visual/l_1.dae" />
       </geometry>
-      <material>
+      <material name="dg2f_gray">
         <color rgba="0.07 0.07 0.07 1.0"/>
       </material>
     </visual>
@@ -166,7 +166,7 @@
       <geometry>
         <mesh filename="package://dg2f_description/meshes/dg2f/visual/l_2.dae" />
       </geometry>
-      <material>
+      <material name="dg2f_gray">
         <color rgba="0.07 0.07 0.07 1.0"/>
       </material>
     </visual>
@@ -193,7 +193,7 @@
       <geometry>
         <mesh filename="package://dg2f_description/meshes/dg2f/visual/l_3.dae" />
       </geometry>
-      <material>
+      <material name="dg2f_gray">
         <color rgba="0.07 0.07 0.07 1.0"/>
       </material>
     </visual>
@@ -221,7 +221,7 @@
       <geometry>
         <mesh filename="package://dg2f_description/meshes/dg2f/visual/l_tip.dae" />
       </geometry>
-      <material>
+      <material name="dg2f_gray">
         <color rgba="0.07 0.07 0.07 1.0"/>
       </material>
     </visual>
