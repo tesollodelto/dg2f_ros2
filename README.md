@@ -1,10 +1,14 @@
-# DG2F ROS 2
+# TESOLLO DG-2F ROS 2
 
-![ROS 2 Humble](https://img.shields.io/badge/ROS_2-Humble-blue?logo=ros)
-![ROS 2 Jazzy](https://img.shields.io/badge/ROS_2-Jazzy-blue?logo=ros)
-![ROS 2 Lyrical](https://img.shields.io/badge/ROS_2-Lyrical-orange?logo=ros)
+Official ROS 2 packages for the **TESOLLO DG-2F**, a 6-DoF, 2-finger multi-joint robotic gripper designed for flexible object handling and industrial automation.
 
-ROS 2 packages for the **Delto Gripper DG-2F-M** (2-finger, 6 actuated DOF).
+This repository provides ROS 2 resources for real-hardware integration, including **URDF robot descriptions, RViz visualization, ros2_control hardware interfaces, and controller configurations**.
+
+### Resources
+
+- [DG-2F Product Page](https://www.tesollo.com/products/grippers/dg-2f)
+- [TESOLLO ROS 2 Documentation](https://tesollodelto.github.io/tesollo_ros2/)
+- [TESOLLO ROS 2 Repository](https://github.com/tesollodelto/tesollo_ros2)
 
 ## Packages
 
@@ -81,10 +85,9 @@ source install/setup.bash
 
 ## ⚠️ Before You Control
 
-The `dg2f_driver` (ros2_control) operates in **Developer Mode** over a custom Ethernet protocol.
-Set the gripper to **Developer Mode** with the communication mode set to **EtherNET** before launching a hardware driver (check the switch/LED settings in your DG-2F product manual).
+The `dg2f_driver` (ros2_control) operates in **Developer Mode** over a custom Ethernet protocol. Set the gripper to **Developer Mode** with the communication mode set to **EtherNET** before launching a hardware driver (check the switch/LED settings in your DG-2F product manual).
 
-> The DG-2F-M is an **M-series** gripper: motor direction is firmware-dependent — `delto_hardware` applies the legacy direction below firmware **v2.8** and the revised direction at v2.8+ (handled automatically).
+> The DG-2F is an M-series gripper: motor direction is firmware-dependent — `delto_hardware` applies the legacy direction below firmware v2.8 and the revised direction at v2.8+ (handled automatically).
 
 ## Launch
 
@@ -104,7 +107,8 @@ ros2 launch dg2f_driver dg2f_pid_all_controller.launch.py delto_ip:=169.254.186.
 ros2 launch dg2f_driver dg2f_mock.launch.py
 ```
 
-See [`dg2f_driver/README.md`](dg2f_driver/README.md) for controller details, topics, and test scripts.
+See [`dg2f_driver/README.md`](./dg2f_driver/README.md) for controller details, topics, and test scripts.
 
 ## License
+
 BSD-3-Clause
